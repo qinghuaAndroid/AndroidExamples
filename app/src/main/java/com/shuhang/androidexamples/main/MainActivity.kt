@@ -3,12 +3,22 @@ package com.shuhang.androidexamples.main
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.shuhang.androidexamples.App
+import com.shuhang.androidexamples.GlobalViewModel
 import com.shuhang.androidexamples.audio.AudioRecordActivity
 import com.shuhang.androidexamples.databinding.ActivityMainBinding
 import com.shuhang.androidexamples.exoplayer.ExoPlayerActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private val globalViewModel by lazy {
+        ViewModelProvider(
+            (this.application) as App,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
+        )[GlobalViewModel::class.java]
+    }
 
     private lateinit var binding: ActivityMainBinding
 
