@@ -26,7 +26,7 @@ open class ExoPlayerActivity : AppCompatActivity() {
         binding = ActivityExoPlayerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initializePlayer("")
+        initializePlayer("https://img2.funchatting.net/dc09de8716fe2e776be2b565884c25b0.mp4")
     }
 
     open fun initializePlayer(uri: String) {
